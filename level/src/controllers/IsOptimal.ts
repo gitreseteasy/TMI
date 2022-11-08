@@ -25,7 +25,8 @@ export class IsOptimal {
           return "[i] Reboot required"
       } else {
           const differenceDaysBigInt = thresholdDaysBigInt - daysBigInt;
-          return `[i] System optimal<br>[i] Reboot is required in ${differenceDaysBigInt.toString().replace('n', '')} days`
+          const daysPretty = differenceDaysBigInt.toString().replace('n', '');
+          return `[i] System optimal<br>[i] Reboot is required in ${daysPretty} days`
       }
    }
 }
