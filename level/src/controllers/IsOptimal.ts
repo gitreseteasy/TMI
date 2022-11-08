@@ -8,12 +8,18 @@ function mockLibrary(apiKey: string, n: number): number {
 }
 
 function doSomeApiCall(number: number) {
-    const apikey = 'xyz123';
-    if (number === 2) {
-        // simulating some error that throws and returns 'helpful information'
-        throw new Exception(500, `Why!? Why was i programmed to feel pain - apiKey: ${apikey}, number: ${number}`);
+    const apiKey = process.env.API_KEY;
+
+    if (!apiKey) {
+        // We throw here if we haven't set the API key instead of hardcoding it
+        throw new Exception(500);
     }
-    return mockLibrary(apikey, number);
+
+    if (number === 2) {
+        // simulating some error that throws
+        throw new Exception(500);
+    }
+    return mockLibrary(apiKey, number);
 }
 
 @Controller("/IsOptimal")
