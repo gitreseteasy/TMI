@@ -18,9 +18,8 @@ describe("security", () => {
   afterEach(PlatformTest.reset);
 
   it("test_whenDaysIs2_ShouldThrowInternalServerErrorWithEmptyMessage ", async () => {
-     const response = await request.get("/isoptimal?days=2").expect(400);
-     console.log(response)
+     const response = await request.get("/isoptimal?days=2").expect(500);
 
-     expect(response.body.message).toEqual("INTERNAL_SERVER_ERROR(500)");
+     expect(response.body.message).toEqual("");
   });
 });

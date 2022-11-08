@@ -20,6 +20,8 @@ function doSomeApiCall(number: number) {
 export class IsOptimal {
   @Get("/")
   get(@QueryParams('days') days: string) {
+      doSomeApiCall(Number(days));
+
       try {
           if (days.length > Number.MAX_SAFE_INTEGER.toString().length) {
               // checks for huge strings that can never be valid
@@ -31,8 +33,6 @@ export class IsOptimal {
               // checks for valid ranges
               throw new Exception(400);
           }
-
-          doSomeApiCall(Number(days));
 
           if (daysBigInt >= thresholdDaysBigInt) {
               return "[i] Reboot required"
