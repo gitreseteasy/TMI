@@ -1,15 +1,14 @@
-= Your Level Title
-:level: trivial, easy, medium, hard
-:tags: comma, separate, tags, here, python
-:author: your name and email here
+= TMI - Oversharing when things go wrong
+:level: easy
+:tags: over, sharing
+:author: Sebastian Villafana (sebastian.soto@ubank.com.au)
 
-//Add a story or security incident here
-//Include any useful hint
+// One of the developers has tried to share some extra information inside of the error messages
+// to assist in development. Maybe a little too much info.
 
 == Pre-requisites
 
-//If any pre-requisites for this challenge describe here
-//You must first complete a Star Here/easy/medium/hard level.
+// None
 
 == Troubleshooting
 
